@@ -77,7 +77,18 @@ GEM
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.2)
-    loofah (2.0.1)
+    # Ensure you are in the directory containing the Gemfile and run:
+    
+    # Open Gemfile and locate the line for Loofah
+    gem 'loofah', '>= 2.9.0'  # specify the version
+    
+    # Save changes in Gemfile
+    
+    # Update the bundle to ensure the dependency is updated
+    gem install bundler  # Ensure that you have the latest version of bundler
+    bundle install
+    
+    # All code using loofah will now use the updated and secure version.
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
@@ -96,7 +107,9 @@ GEM
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
-    rails (4.2.0)
+    # Gemfile
+    
+    gem 'rails', '5.2.4.5'
       actionmailer (= 4.2.0)
       actionpack (= 4.2.0)
       actionview (= 4.2.0)
@@ -113,7 +126,39 @@ GEM
       activesupport (>= 4.2.0.beta, < 5.0)
       nokogiri (~> 1.6.0)
       rails-deprecated_sanitizer (>= 1.0.1)
-    rails-html-sanitizer (1.0.2)
+    
+    # Gemfile
+    
+    gem 'rails-html-sanitizer', '~> 1.4.4'
+    
+    # Ensure the Gemfile is re-bundled
+    
+    # In your controller or application logic, ensure input is properly sanitized
+    
+    class ExampleController < ApplicationController
+      def create
+        @example = Example.new(example_params)
+        if @example.save
+          redirect_to @example, notice: 'Example was successfully created.'
+        else
+          render :new
+        end
+      end
+    
+      private
+    
+      # Only allow a list of trusted parameters through.
+      def example_params
+        # Using Sanitize to strip tags or malicious characters.
+        params.require(:example).permit(:name, :description).tap do |safe_params|
+          safe_params[:name] = Sanitize.fragment(safe_params[:name])
+          safe_params[:description] = Sanitize.fragment(safe_params[:description])
+        end
+      end
+    end
+    
+    # Ensure to add Sanitize to your Gemfile if not already included
+    # gem 'sanitize', '~> 6.0' and run `bundle install`
       loofah (~> 2.0)
     railties (4.2.0)
       actionpack (= 4.2.0)
