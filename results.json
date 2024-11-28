@@ -13,19 +13,6 @@
     "EndLine": 10
   },
   {
-    "Id": "2bb965f2-bb6a-4293-b8c7-173abaf44705",
-    "Severity": "MEDIUM",
-    "UniqueId": "47df0d2b-fb1d-4118-ad89-76839f97cf21-e0636b950dd005468b5f9a0426ed50936e136f18477ca983cfc51b79e29f6463",
-    "Title": "rails-html-sanitizer 1.0.2 is vulnerable (CVE-2018-3741). Upgrade to rails-html-sanitizer 1.0.4",
-    "IssueTypeId": "SanitizeMethods",
-    "IssueTypeTitle": "Cross-Site Scripting",
-    "Scanner": "brakeman",
-    "FilePath": "Gemfile.lock",
-    "CodeSnippet": "",
-    "StartLine": 116,
-    "EndLine": 116
-  },
-  {
     "Id": "a6a50bdd-0137-44d0-94c7-023665f9af0a",
     "Severity": "HIGH",
     "UniqueId": "47df0d2b-fb1d-4118-ad89-76839f97cf21-13a729cdb587e9eb00f0277a01d412375e88e201157272ca202f6a268c217ed8",
@@ -50,19 +37,6 @@
     "CodeSnippet": "****************************************************************************************************************************0680",
     "StartLine": 7,
     "EndLine": 7
-  },
-  {
-    "Id": "00231d6d-298f-4f5a-b2a7-642705c18663",
-    "Severity": "MEDIUM",
-    "UniqueId": "47df0d2b-fb1d-4118-ad89-76839f97cf21-c8adc1c0caf2c9251d1d8de588fb949070212d0eed5e1580aee88bab2287b772",
-    "Title": "loofah gem 2.0.1 is vulnerable (CVE-2018-8048). Upgrade to 2.2.1",
-    "IssueTypeId": "SanitizeMethods",
-    "IssueTypeTitle": "Cross-Site Scripting",
-    "Scanner": "brakeman",
-    "FilePath": "Gemfile.lock",
-    "CodeSnippet": "",
-    "StartLine": 80,
-    "EndLine": 80
   },
   {
     "Id": "39f8987e-e1cc-4da7-849d-038ae8a57753",
